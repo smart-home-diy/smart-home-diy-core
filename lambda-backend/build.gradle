@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'com.smart.home.diy'
+version projectVersion
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':common')
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation "org.assertj:assertj-core:${assertJVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
