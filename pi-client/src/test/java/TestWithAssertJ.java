@@ -9,6 +9,6 @@ public class TestWithAssertJ {
   void testAssertJ() {
     ClassForTesting classForTesting = new ClassForTesting();
     assertThat(classForTesting.returnTrue()).as("is not true")
-        .isTrue();test
+        .isTrue();
   }
 }
