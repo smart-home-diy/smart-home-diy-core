@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    projectVersion = '0.0.1-ALPHA'
+    junitJupiterVersion = '5.7.0'
+    assertJVersion = '3.19.0'
+}
+
+test {
+    useJUnitPlatform()
+}
