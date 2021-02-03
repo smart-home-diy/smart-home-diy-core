@@ -1,6 +1,14 @@
+buildscript {
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.3'
+    }
+}
+
 plugins {
     id 'java'
 }
+
+apply plugin: 'com.github.johnrengelman.shadow'
 
 group 'com.smart.home.diy'
 version projectVersion
@@ -11,6 +19,8 @@ repositories {
 
 dependencies {
     implementation project(':common')
+    implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
+    implementation 'com.amazonaws:aws-lambda-java-events:3.7.0'
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'

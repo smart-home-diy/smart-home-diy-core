@@ -1,6 +1,14 @@
+buildscript {
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.3'
+    }
+}
+
 plugins {
     id 'java'
 }
+
+apply plugin: 'com.github.johnrengelman.shadow'
 
 group 'com.smart.home.diy'
 version projectVersion
@@ -11,7 +19,8 @@ repositories {
 
 dependencies {
     implementation project(':common')
-    implementation 'javax.websocket:javax.websocket-api:1.1'
+    implementation 'javax.websocket:javax.websocket-client-api:1.1'
+    implementation 'org.glassfish.tyrus.bundles:tyrus-standalone-client:1.17'
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
