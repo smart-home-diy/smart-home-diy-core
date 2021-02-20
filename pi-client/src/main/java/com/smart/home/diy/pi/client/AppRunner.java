@@ -3,6 +3,8 @@ package com.smart.home.diy.pi.client;
 import com.smart.home.diy.common.payload.model.Message;
 import com.smart.home.diy.common.payload.model.Payload;
 import com.smart.home.diy.common.payload.model.RequestContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -10,21 +12,15 @@ import java.util.Scanner;
 
 public class AppRunner {
 
+  private static final Logger LOGGER = LoggerFactory.getLogger(AppRunner.class);
+
   public static void main(String[] args) {
     try {
       // open websocket
       PiWebSocketClient client = new PiWebSocketClient(new URI("wss://7krblbehs9.execute-api.us-east-1.amazonaws.com/dev/"));
 
-
-      // add listener
-//    client.addMessageHandler(new WebsocketClientEndpoint.MessageHandler() {
-//      public void handleMessage(String message) {
-//        System.out.println(message);
-//      }
-//    });
-
-      // send message to websocket
-      //client.sendMessage("{\"action\": \"sendMessage\", \"otherData\": \"otherValue\"}");
+      LOGGER.info("test");
+      LOGGER.debug("test3");
 
       readSystemInput(client);
 
