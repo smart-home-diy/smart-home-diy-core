@@ -34,7 +34,7 @@ public class AppRunner {
   }
 
   private static void readSystemInput(PiWebSocketClient client) {
-    try (Scanner scanner = new Scanner(System.in)) {
+    try (Scanner scanner = new Scanner("hello test one more I think not")) {
       while (scanner.hasNext()) {
         String text = scanner.next();
         System.out.println(text);

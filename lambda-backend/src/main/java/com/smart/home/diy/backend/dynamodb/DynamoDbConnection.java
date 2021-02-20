@@ -28,21 +28,21 @@ public class DynamoDbConnection {
 
 //    GetItemSpec spec = new GetItemSpec().withPrimaryKey("PiName", "testPi");
 
-    ScanRequest scanRequest = new ScanRequest().withTableName("PiState");
-    ScanResult scanResult = client.scan(scanRequest);
-
-    LOGGER.info("getting info");
-    System.out.println("Attempting to read the item...");
-//    Item outcome = table.getItem(spec);
-    System.out.println("GetItem succeeded: ");
-    System.out.println(scanResult);
-
-    UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey("PiName", "testPi")
-        .withUpdateExpression("set Connected = :c")
-        .withValueMap(new ValueMap().withBoolean(":c", false))
-        .withReturnValues(ReturnValue.UPDATED_NEW);
-
-    UpdateItemOutcome outcome = table.updateItem(updateItemSpec);
-    System.out.println(outcome);
+//    ScanRequest scanRequest = new ScanRequest().withTableName("PiState");
+//    ScanResult scanResult = client.scan(scanRequest);
+//
+//    LOGGER.info("getting info");
+//    System.out.println("Attempting to read the item...");
+////    Item outcome = table.getItem(spec);
+//    System.out.println("GetItem succeeded: ");
+//    System.out.println(scanResult);
+//
+//    UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey("PiName", "testPi")
+//        .withUpdateExpression("set Connected = :c")
+//        .withValueMap(new ValueMap().withBoolean(":c", false))
+//        .withReturnValues(ReturnValue.UPDATED_NEW);
+//
+//    UpdateItemOutcome outcome = table.updateItem(updateItemSpec);
+//    System.out.println(outcome);
   }
 }
