@@ -1,3 +1,5 @@
+import com.github.jengelman.gradle.plugins.shadow.transformers.Log4j2PluginsCacheFileTransformer
+
 buildscript {
     dependencies {
         classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.3'
@@ -15,6 +17,10 @@ version projectVersion
 
 repositories {
     mavenCentral()
+}
+
+shadowJar {
+    transform(Log4j2PluginsCacheFileTransformer)
 }
 
 dependencies {
